@@ -1,0 +1,15 @@
+{%extends "bootstrap/base.html"%}
+{%import "bootstrap/wtf.html" as wtf%}
+{%block content%}
+{%for message in get_flashed_messages()%}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{message}}
+    </div>
+{%endfor%}
+    <div class="page-header">My Account</div>
+    <div class="container">
+    Username : {{administrator.administrator_account}}  Password: {{administrator.administrator_password}}
+    </div>
+    <a href="{{url_for('exit_login')}}">Exit Login</a>
+{%endblock%}
